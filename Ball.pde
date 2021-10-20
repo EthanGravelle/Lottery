@@ -1,10 +1,11 @@
 public class Ball {
   private PVector pos;
-  private final int SIZE = 30;
+  private final int SIZE = 150;
   private color COLOR;
   public int value;
   
   public Ball(PVector p) {
+    pos = p;
     value = (int)(Math.random()*20); //0-19
     int colorChoice = (int)(Math.random()*6+1);
     if (colorChoice == 1) {
@@ -29,9 +30,11 @@ public class Ball {
   
   public void show() {
     fill(COLOR);
-    circle(pos.x,pos.y,SIZE);
+    circle(pos.x,pos.y,SIZE); //<>//
     fill(255);
     circle(pos.x,pos.y,SIZE*0.60);
+    fill(0);
+    textSize(48);
     textAlign(CENTER,CENTER);
     text(value,pos.x,pos.y);
   }
